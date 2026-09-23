@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Desempenho dos Estudantes</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>📚 Desempenho dos Estudantes</h1>
+            <p>Acompanhe atividades, notas e médias da turma.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- CADASTRO DE ESTUDANTE -->
+        <section class="card">
+            <h2>👨‍🎓 Adicionar estudante</h2>
+
+            <div class="form-row">
+                <input
+                    type="text"
+                    id="nomeEstudante"
+                    placeholder="Nome do estudante"
+                >
+
+                <button onclick="adicionarEstudante()">
+                    Adicionar estudante
+                </button>
+            </div>
+        </section>
+
+
+        <!-- CADASTRO DE ATIVIDADE -->
+        <section class="card">
+            <h2>📝 Adicionar atividade</h2>
+
+            <div class="form-row">
+
+                <input
+                    type="text"
+                    id="nomeAtividade"
+                    placeholder="Nome da atividade"
+                >
+
+                <input
+                    type="number"
+                    id="valorAtividade"
+                    placeholder="Valor"
+                    min="0"
+                    step="0.1"
+                    value="10"
+                >
+
+                <button onclick="adicionarAtividade()">
+                    Adicionar atividade
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- INFORMAÇÕES -->
+        <section class="resumo">
+
+            <div class="resumo-card">
+                <span>👨‍🎓</span>
+                <strong id="totalEstudantes">0</strong>
+                <p>Estudantes</p>
+            </div>
+
+            <div class="resumo-card">
+                <span>📝</span>
+                <strong id="totalAtividades">0</strong>
+                <p>Atividades</p>
+            </div>
+
+            <div class="resumo-card">
+                <span>📊</span>
+                <strong id="mediaTurma">0,00</strong>
+                <p>Média da turma</p>
+            </div>
+
+        </section>
+
+
+        <!-- TABELA -->
+        <section class="card">
+
+            <div class="titulo-tabela">
+                <div>
+                    <h2>📊 Desempenho</h2>
+                    <p>Digite as notas diretamente na tabela.</p>
+                </div>
+
+                <button class="btn-perigo" onclick="limparDados()">
+                    Limpar tudo
+                </button>
+            </div>
+
+            <div class="tabela-container">
+
+                <table id="tabelaNotas">
+
+                    <thead>
+                        <tr id="cabecalhoTabela">
+                            <th>Estudante</th>
+                            <th>Média</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="corpoTabela">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Aplicativo de acompanhamento escolar</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
